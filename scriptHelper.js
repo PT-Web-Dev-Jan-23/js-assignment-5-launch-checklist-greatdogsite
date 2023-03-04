@@ -48,7 +48,7 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
         fuelStatus.style.color = "black";
     }
     if (cargoMass.value > 10000) {
-        cargoStatus.innerHTML = "Fuel level high enough for launch.";
+        cargoStatus.innerHTML = "Cargo mass too high for launch.";
         cargoStatus.style.color = "red";
         ready = false;
     } else {
