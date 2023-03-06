@@ -36,23 +36,23 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
     let fuelStatus = document.querySelector("#fuelStatus");
     let cargoStatus = document.querySelector("#cargoStatus");
 
-    pilotStatus.innerHTML = `${pilotName.value} Ready.`;
-    copilotStatus.innerHTML = `${copilotName.value} Ready.`;
+    pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
+    copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
     let ready = true;
     if (fuelLevel.value < 10000) {
-        fuelStatus.innerHTML = "There is not enough fuel for the journey.";
+        fuelStatus.innerHTML = "Fuel level high enough for launch";
         fuelStatus.style.color = "red";
         ready = false;
     } else {
-        fuelStatus.innerHTML = "There is enough fuel for the journey.";
+        fuelStatus.innerHTML = "There is enough fuel for the journey";
         fuelStatus.style.color = "black";
     }
     if (cargoMass.value > 10000) {
-        cargoStatus.innerHTML = "Cargo mass too high for launch.";
+        cargoStatus.innerHTML = "Cargo mass too high for launch";
         cargoStatus.style.color = "red";
         ready = false;
     } else {
-        cargoStatus.innerHTML = "Cargo mass low enough for launch.";
+        cargoStatus.innerHTML = "Cargo mass low enough for launch";
         cargoStatus.style.color = "black";
     }
     if (!ready) {
@@ -60,8 +60,8 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
         document.querySelector("#launchStatus").innerHTML = "Shuttle not ready for launch.";
         document.querySelector("#launchStatus").style.color = "red";
     } else {
-        document.querySelector("#launchStatus").innerHTML = "Shuttle  ready for launch.";
-        document.querySelector("#launchStatus").style.color = "green";
+        document.querySelector("#launchStatus").innerHTML = "Shuttle is Ready for Launch";
+        document.querySelector("#launchStatus").style.color = "rgb(65, 159, 106)";
         document.querySelector("#faultyItems").style.visibility = "hidden";
     }
 }
