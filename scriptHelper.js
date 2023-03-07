@@ -25,7 +25,7 @@ function validateInput(testInput) { //input a string //returns "Empty", "Not a N
     if (num % num !== 0) {
         return "Not a Number";
     }
-    if (num % num === 0) {
+    if (num % num === 0 || num === 0) {
         return "Is a Number";
     }
 }
