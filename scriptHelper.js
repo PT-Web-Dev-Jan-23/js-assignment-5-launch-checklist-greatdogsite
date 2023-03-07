@@ -22,11 +22,11 @@ function validateInput(testInput) { //input a string //returns "Empty", "Not a N
     if (testInput === "" || (typeof testInput) === "undefined" || (testInput) === null) { //null is an object
         return "Empty";
     }
-    if (num % num !== 0) {
-        return "Not a Number";
-    }
     if (num % num === 0 || num === 0) {
         return "Is a Number";
+    }
+    if (num % num !== 0) {
+        return "Not a Number";
     }
 }
 
