@@ -30,39 +30,41 @@ function validateInput(testInput) { //input a string //returns "Empty", "Not a N
     }
 }
 
-function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargoMass) {
+function formSubmission(form, pilotName, copilotName, fuelLevel, cargoMass) {
     let pilotStatus = document.querySelector("#pilotStatus");
     let copilotStatus = document.querySelector("#copilotStatus");
     let fuelStatus = document.querySelector("#fuelStatus");
     let cargoStatus = document.querySelector("#cargoStatus");
+    let faultyItems = document.querySelector("#faultyItems");
+    let launchStatus = document.querySelector("#launchStatus");
 
     pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
     copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
-    let ready = true;
     if (fuelLevel.value < 10000) {
         fuelStatus.innerHTML = "Fuel level too low for launch";
         fuelStatus.style.color = "rgb(199, 37, 78)";
-        ready = false;
+        faultyItems.style.visibility = "visible";
+        launchStatus.innerHTML = "Shuttle not ready for launch.";
+        launchStatus.style.color = "rgb(199, 37, 78)"
     } else {
         fuelStatus.innerHTML = "Fuel level high enough for launch";
         fuelStatus.style.color = "black";
+        launchStatus.innerHTML = "Shuttle is Ready for Launch";
+        launchStatus.style.color = "rgb(65, 159, 106)";
+        faultyItems.style.visibility = "hidden";
     }
     if (cargoMass.value > 10000) {
         cargoStatus.innerHTML = "Cargo mass too high for launch";
         cargoStatus.style.color = "rgb(199, 37, 78)";
-        ready = false;
+        faultyItems.style.visibility = "visible";
+        launchStatus.innerHTML = "Shuttle not ready for launch.";
+        launchStatus.style.color = "rgb(199, 37, 78)"
     } else {
         cargoStatus.innerHTML = "Cargo mass low enough for launch";
         cargoStatus.style.color = "black";
-    }
-    if (!ready) {
-        document.querySelector("#faultyItems").style.visibility = "visible";
-        document.querySelector("#launchStatus").innerHTML = "Shuttle not ready for launch.";
-        document.querySelector("#launchStatus").style.color = "rgb(199, 37, 78)";
-    } else {
-        document.querySelector("#launchStatus").innerHTML = "Shuttle is Ready for Launch";
-        document.querySelector("#launchStatus").style.color = "rgb(65, 159, 106)";
-        document.querySelector("#faultyItems").style.visibility = "hidden";
+        launchStatus.innerHTML = "Shuttle is Ready for Launch";
+        launchStatus.style.color = "rgb(65, 159, 106)";
+        faultyItems.style.visibility = "hidden";
     }
 }
 
