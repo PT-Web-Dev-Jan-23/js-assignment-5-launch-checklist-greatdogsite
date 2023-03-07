@@ -59,7 +59,8 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
         document.querySelector("#faultyItems").style.visibility = "visible";
         document.querySelector("#launchStatus").innerHTML = "Shuttle not ready for launch.";
         document.querySelector("#launchStatus").style.color = "rgb(199, 37, 78)";
-    } else {
+    } 
+    if (ready) {
         document.querySelector("#launchStatus").innerHTML = "Shuttle is Ready for Launch";
         document.querySelector("#launchStatus").style.color = "rgb(65, 159, 106)";
         document.querySelector("#faultyItems").style.visibility = "hidden";
