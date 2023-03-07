@@ -36,32 +36,32 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
     let fuelStatus = document.querySelector("#fuelStatus");
     let cargoStatus = document.querySelector("#cargoStatus");
 
-    pilotStatus.innerHTML = `Pilot ${pilotName.value} is ready for launch`;
-    copilotStatus.innerHTML = `Co-Pilot ${copilotName.value} is ready for launch`;
+    pilotStatus.textContent = `Pilot ${pilotName.value} is ready for launch`;
+    copilotStatus.textContent = `Co-Pilot ${copilotName.value} is ready for launch`;
     let ready = true;
     if (fuelLevel.value < 10000) {
-        fuelStatus.innerHTML = "Fuel level too low for launch";
+        fuelStatus.textContent = "Fuel level too low for launch";
         fuelStatus.style.color = "rgb(199, 37, 78)";
         ready = false;
     } else {
-        fuelStatus.innerHTML = "Fuel level high enough for launch";
+        fuelStatus.textContent = "Fuel level high enough for launch";
         fuelStatus.style.color = "black";
     }
     if (cargoMass.value > 10000) {
-        cargoStatus.innerHTML = "Cargo mass too high for launch";
+        cargoStatus.textContent = "Cargo mass too high for launch";
         cargoStatus.style.color = "rgb(199, 37, 78)";
         ready = false;
     } else {
-        cargoStatus.innerHTML = "Cargo mass low enough for launch";
+        cargoStatus.textContent = "Cargo mass low enough for launch";
         cargoStatus.style.color = "black";
     }
     if (!ready) {
         document.querySelector("#faultyItems").style.visibility = "visible";
-        document.querySelector("#launchStatus").innerHTML = "Shuttle not ready for launch.";
+        document.querySelector("#launchStatus").textContent = "Shuttle not ready for launch.";
         document.querySelector("#launchStatus").style.color = "rgb(199, 37, 78)";
     } 
     if (ready) {
-        document.querySelector("#launchStatus").innerHTML = "Shuttle is Ready for Launch";
+        document.querySelector("#launchStatus").textContent = "Shuttle is Ready for Launch";
         document.querySelector("#launchStatus").style.color = "rgb(65, 159, 106)";
         document.querySelector("#faultyItems").style.visibility = "visible";
     }
