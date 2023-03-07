@@ -30,7 +30,7 @@ function validateInput(testInput) { //input a string //returns "Empty", "Not a N
     }
 }
 
-function formSubmission(form, pilotName, copilotName, fuelLevel, cargoMass) {
+function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargoMass) {
     let pilotStatus = document.querySelector("#pilotStatus");
     let copilotStatus = document.querySelector("#copilotStatus");
     let fuelStatus = document.querySelector("#fuelStatus");
