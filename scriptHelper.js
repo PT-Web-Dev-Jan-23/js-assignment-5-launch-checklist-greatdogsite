@@ -36,10 +36,10 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
     let fuelStatus = document.querySelector("#fuelStatus");
     let cargoStatus = document.querySelector("#cargoStatus");
 
-    pilotStatus.textContent = `Pilot ${pilotName.value} is ready for launch`;
-    copilotStatus.textContent = `Co-Pilot ${copilotName.value} is ready for launch`;
+    pilotStatus.textContent = `Pilot ${pilotName} is ready for launch`;
+    copilotStatus.textContent = `Co-Pilot ${copilotName} is ready for launch`;
     let ready = true;
-    if (fuelLevel.value < 10000) {
+    if (fuelLevel< 10000) {
         fuelStatus.textContent = "Fuel level too low for launch";
         fuelStatus.style.color = "rgb(199, 37, 78)";
         ready = false;
@@ -47,7 +47,7 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
         fuelStatus.textContent = "Fuel level high enough for launch";
         fuelStatus.style.color = "black";
     }
-    if (cargoMass.value > 10000) {
+    if (cargoMass > 10000) {
         cargoStatus.textContent = "Cargo mass too high for launch";
         cargoStatus.style.color = "rgb(199, 37, 78)";
         ready = false;
