@@ -26,7 +26,7 @@ window.addEventListener("load", function () {
             alert("Please enter information in all fields.");
             event.preventDefault();
         } else {
-            formSubmission(document, form, pilotName, copilotName, fuelLevel, cargoMass);
+            formSubmission(document, form, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
         }
     });
 
