@@ -37,7 +37,7 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
     let cargoStatus = document.querySelector("#cargoStatus");
 
     pilotStatus.textContent = `Pilot ${pilotName} is ready for launch`;
-    copilotStatus.textContent = `Co-Pilot ${copilotName} is ready for launch`;
+    copilotStatus.textContent = `Co-pilot ${copilotName} is ready for launch`;
     let ready = true;
     if (fuelLevel< 10000) {
         fuelStatus.textContent = "Fuel level too low for launch";
@@ -48,7 +48,7 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
         fuelStatus.style.color = "black";
     }
     if (cargoMass > 10000) {
-        cargoStatus.textContent = "Cargo mass too high for launch";
+        cargoStatus.textContent = "Cargo mass too heavy for launch";
         cargoStatus.style.color = "rgb(199, 37, 78)";
         ready = false;
     } else {
@@ -57,7 +57,7 @@ function formSubmission(document, form, pilotName, copilotName, fuelLevel, cargo
     }
     if (!ready) {
         document.querySelector("#faultyItems").style.visibility = "visible";
-        document.querySelector("#launchStatus").textContent = "Shuttle not ready for launch.";
+        document.querySelector("#launchStatus").textContent = "Shuttle Not Ready for Launch";
         document.querySelector("#launchStatus").style.color = "rgb(199, 37, 78)";
     } 
     if (ready) {
