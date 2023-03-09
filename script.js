@@ -2,6 +2,7 @@
 
 window.addEventListener("load", function () {
     let form = document.querySelector("#launchForm");
+    document.querySelector("#faultyItems").style.visibility = "hidden";
     form.addEventListener("submit", function (event) {
         event.preventDefault();
         let pilotName = document.querySelector("input[name=pilotName]");
