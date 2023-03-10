@@ -14,19 +14,19 @@ window.addEventListener("load", function () {
         let sendAlert = false;
         
         if (validateInput(pilotName.value) !== "Not a Number") {
-                message += `Please enter a pilot name. <br>`
+                message = "Please enter a pilot name."
                 sendAlert = true;
             };
          if (validateInput(copilotName.value) !== "Not a Number") {
-                message += `Please enter a co-pilot name. <br>`
+                message = "Please enter a co-pilot name."
                 sendAlert = true;
             };
         if (validateInput(fuelLevel.value) !== "Is a Number") {
-                message += `Please enter the amount of fuel. <br>`
+                message = "Please enter the amount of fuel."
                 sendAlert = true;
             };
         if (validateInput(cargoMass.value) !== "Is a Number") {
-                message += `Please enter the mass of the cargo <br>`
+                message = "Please enter the mass of the cargo."
                 sendAlert = true;
             };
 
