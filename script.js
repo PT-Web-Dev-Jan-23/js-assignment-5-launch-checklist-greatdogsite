@@ -10,21 +10,28 @@ window.addEventListener("load", function () {
         let fuelLevel = document.querySelector("input[name=fuelLevel]");
         let cargoMass = document.querySelector("input[name=cargoMass]");
 
-        let formArrayString = [pilotName, copilotName];
-        let formArrayNumber = [fuelLevel, cargoMass];
+        let message;
         let sendAlert = false;
-        for (let item of formArrayString) {
-            if (validateInput(item.value) !== "Not a Number") {
+        
+        if (validateInput(pilotName.value) !== "Not a Number") {
+                message="Please enter a pilot name." 
                 sendAlert = true;
             };
-        }
-        for (let item of formArrayNumber) {
-            if (validateInput(item.value) !== "Is a Number") {
+         if (validateInput(copilotName.value) !== "Not a Number") {
+                message="Please enter a co-pilot name." 
                 sendAlert = true;
             };
-        }
+        if (validateInput(fuelLevel.value) !== "Is a Number") {
+                message="Please enter the amount of fuel." 
+                sendAlert = true;
+            };
+        if (validateInput(cargoMass.value) !== "Is a Number") {
+                message="Please enter the mass of the cargo" 
+                sendAlert = true;
+            };
+
         if (sendAlert) {
-            alert("Please enter information in all fields.");
+            alert(message);
             event.preventDefault();
         } else {
             formSubmission(document, form, pilotName.value, copilotName.value, fuelLevel.value, cargoMass.value);
